@@ -7,9 +7,10 @@ pipeline {
                 sh 'docker pull nginx'
             }
         }
-        stage('removing existing container'){
+        stage('remove existing container'){
             steps{
-                sh 'docker rm -rf hello || true'
+                sh 'docker stop hello || true'
+                 sh 'docker rm hello || true'
             }
         }
          stage('run the container') {
