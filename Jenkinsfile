@@ -11,11 +11,7 @@ pipeline {
             steps{
                 sh 'docker stop hello || true'
                  sh 'docker rm hello || true'
-            }
-        }
-         stage('run the container') {
-            steps {
-                sh 'docker run -it -d --name hello -p 80:80 nginx'
+                 sh 'docker run -it -d --name hello -p 80:80 nginx'
             }
         }
     }
