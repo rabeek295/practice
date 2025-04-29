@@ -9,7 +9,7 @@ pipeline {
         }
          stage('run the container') {
             steps {
-                sh 'docker run -it -d -p 80:80 nginx'
+                sh 'docker run -it -d -p 80:8000 nginx'
             }
         }
     }
