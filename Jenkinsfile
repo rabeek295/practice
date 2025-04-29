@@ -9,7 +9,7 @@ pipeline {
         }
         stage('removing existing container'){
             steps{
-                sh 'docker rm -f hello || true'
+                sh 'docker rm -rf hello || true'
             }
         }
          stage('run the container') {
