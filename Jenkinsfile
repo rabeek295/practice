@@ -9,12 +9,12 @@ pipeline {
         }
         stage('removing existing container'){
             steps{
-                sh 'docker rm -f app || true'
+                sh 'docker rm -f hello || true'
             }
         }
          stage('run the container') {
             steps {
-                sh 'docker run -it -d --name app -p 80:8000 nginx'
+                sh 'docker run -it -d --name hello -p 80:8000 nginx'
             }
         }
     }
